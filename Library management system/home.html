@@ -1,0 +1,94 @@
+<!Doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StartupCarvaan</title>
+     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  
+ <link href="css/home1.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/home2.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+  <div class="main-wrapper">
+    
+      <div class="container">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          
+          </div>
+        </div>
+      </div>
+        
+<section style="background-image: url(images/library.jpg); height: 600px;">
+        <div class="container">
+          <div class="page-section page-section--large text-center">
+            <button class="video-section__icon" data-toggle="modal" data-target="#myModal"></button>
+          </div>
+        </div>
+      </section><br><br>
+      <h2 style="text-align: center;">Library Management System</h2>
+    
+    <section class="service">
+      <div class="container">
+        <div class="page-section text-center">
+          
+          <div class="row gutters-40">
+            <div class="col-md-4">
+              <div class="thumbnail">
+                
+                <a class="service__title" href="#">Number of book issued</a>
+               
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                
+                <a class="service__title" href="borrow_book.html">Borrow a book</a>
+                
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                
+                <a class="service__title" href="#">Update profile</a>
+                
+              </div>
+            </div>
+             
+              
+              
+          </div>
+         
+          </div>
+        </div>
+
+      </section>
+      
+   
+    
+    
+  
+
+  
+  <script>
+    $(document).ready(function() {
+
+      var $videoSrc = $("#video").attr("src");
+
+      $('#myModal').on('hide.bs.modal', function (e) {
+        $("#video").attr('src',$videoSrc); 
+      });
+
+
+
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
