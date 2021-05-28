@@ -1,7 +1,27 @@
 <?php include "connection.php";?>
-<?php include "functions.php";?>
-<?php createProfile();?>
+<?php
 
+
+
+   if(isset($_POST['submit'])){
+       $email = $_POST['email'];
+       $student_id=$_POST['student_id'];
+       $password=$_POST['password'];
+       $name = $_POST['name'];
+       $phone_number = $_POST['phone_number'];
+       $sql = "INSERT INTO register(email,student_id,password,name,phone_number)
+               VALUES ('$email','$student_id','$password','$name','$phone_number')";
+       $result = mysqli_query($con,$sql);
+       if($result){
+           echo "Result inserted successfully";
+      }
+       else {
+           die("Failed to insert data: ". mysqli_connect_error());  
+}
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +67,7 @@
               <button name="submit" id="register" class="btn btn-block login-btn" type="submit" value="submit">Register</button>
             </form>
            
-            <p class="login-wrapper-footer-text">Have an account? <a href="login.html" class="text-reset">Login here</a></p>
+            <p class="login-wrapper-footer-text">Have an account? <a href="login.php" class="text-reset">Login here</a></p>
           </div>
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">
