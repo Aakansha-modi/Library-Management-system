@@ -1,3 +1,28 @@
+<?php include "connection.php";?>
+
+<?php
+if(isset($_POST['submit'])){
+        $username = $_POST['email'];  
+        $password = $_POST['password'];  
+        
+        $username = mysqli_real_escape_string($con, $username);  
+        $password = mysqli_real_escape_string($con, $password);  
+
+        $sql = "select *from login where username = '$username' and password = '$password'";  
+        $result = mysqli_query($con, $sql);  
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+        $count = mysqli_num_rows($result);  
+          
+        if($count == 1){  
+             header("location:home.php");
+        }  
+        else{  
+         header("location:login.php");
+        } 
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +43,7 @@
           
           <div class="login-wrapper my-auto">
             <h1 class="login-title">Log in</h1>
-            <form action="authentication.php" method="post">
+            <form action="login.php" method="post">
               <div class="form-group">
                 <label for="email">Username</label>
                 <input type="email" name="email" id="email" class="form-control" placeholder="email@example.com">
@@ -27,10 +52,12 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" class="form-control" placeholder="enter your passsword">
               </div>
-              <input name="login" id="login" class="btn btn-block login-btn" type="button" value="Login">
+              
+              <button name="submit" id="login" class="btn btn-block login-btn" type="submit" value="submit">Login</button>
+              
             </form>
            
-            <p class="login-wrapper-footer-text">Don't have an account? <a href="register.html" class="text-reset">Register here</a></p>
+            <p class="login-wrapper-footer-text">Don't have an account? <a href="register.php" class="text-reset">Register here</a></p>
           </div>
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">
